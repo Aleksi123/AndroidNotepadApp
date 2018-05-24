@@ -11,24 +11,33 @@ import android.widget.EditText;
 public class NewNoteActivity extends AppCompatActivity {
 
     public static final String EXTRA_REPLY = "com.example.android.wordlistsql.REPLY";
+    public static final String EXTRA_REPLY2 = "com.example.android.wordlistsql.REPLY2";
+    private  EditText mEditTitleView;
     private  EditText mEditNoteView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_note);
+        mEditTitleView = findViewById(R.id.edit_title);
         mEditNoteView = findViewById(R.id.edit_note);
 
         FloatingActionButton button = findViewById(R.id.button_save);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent replyIntent = new Intent();
-                if (TextUtils.isEmpty(mEditNoteView.getText())) {
+                //Intent replyIntent2 = new Intent();
+                if (TextUtils.isEmpty(mEditTitleView.getText())) {
                     setResult(RESULT_CANCELED, replyIntent);
                 } else {
-                    String word = mEditNoteView.getText().toString();
-                    replyIntent.putExtra(EXTRA_REPLY, word);
+                    String title = mEditTitleView.getText().toString();
+                    replyIntent.putExtra(EXTRA_REPLY, title);
                     setResult(RESULT_OK, replyIntent);
+
+                    String note = mEditNoteView.getText().toString();
+                    replyIntent.putExtra(EXTRA_REPLY2,note);
+                    setResult(RESULT_OK, replyIntent);
+
                 }
                 finish();
             }

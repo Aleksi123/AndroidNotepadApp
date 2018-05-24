@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_NOTE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Note note = new Note(data.getStringExtra(NewNoteActivity.EXTRA_REPLY));
+            Note note = new Note(data.getStringExtra(NewNoteActivity.EXTRA_REPLY),data.getStringExtra(NewNoteActivity.EXTRA_REPLY2));
             mNoteViewModel.insert(note);
             Context context = getApplicationContext();
             CharSequence text = "Note saved";

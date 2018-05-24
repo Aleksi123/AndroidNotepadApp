@@ -13,7 +13,7 @@ public class NoteRepository {
     NoteRepository(Application application) {
         NoteRoomDatabase db = NoteRoomDatabase.getDatabase(application);
         mNoteDao = db.noteDao();
-        mAllNotes = mNoteDao.getAlphabetizedWords();
+        mAllNotes = mNoteDao.getNotes();
     }
 
     LiveData<List<Note>> getAllNotes() {

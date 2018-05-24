@@ -10,11 +10,18 @@ public class Note {
 
     @PrimaryKey
     @NonNull
+    @ColumnInfo(name = "title")
+    private String mTitle;
+
     @ColumnInfo(name = "note")
-    private String mNote;
+    private  String mNote;
 
-    public Note(@NonNull String note) {
-        this.mNote = note;}
+    public Note(@NonNull String title, String note) {
+        this.mTitle = title;
+        this.mNote = note;
+    }
 
-    public String getNote(){return this.mNote;}
+    public String getTitle(){return this.mTitle;}
+
+    public String getNote() { return this.mNote; }
 }
