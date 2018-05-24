@@ -26,7 +26,6 @@ public class NewNoteActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent replyIntent = new Intent();
-                //Intent replyIntent2 = new Intent();
                 if (TextUtils.isEmpty(mEditTitleView.getText())) {
                     setResult(RESULT_CANCELED, replyIntent);
                 } else {
@@ -37,7 +36,6 @@ public class NewNoteActivity extends AppCompatActivity {
                     String note = mEditNoteView.getText().toString();
                     replyIntent.putExtra(EXTRA_REPLY2,note);
                     setResult(RESULT_OK, replyIntent);
-
                 }
                 finish();
             }

@@ -35,7 +35,7 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.NoteVi
     @Override
     public void onBindViewHolder(NoteViewHolder holder, int position) {
         Note current = mNotes.get(position);
-        String text = "Title: "+current.getNote()+"\n"+"Note: "+current.getNote();
+        String text = "Title: "+current.getTitle()+"\n"+"Note: "+current.getNote();
         holder.noteItemView.setText(text);
     }
 
