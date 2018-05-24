@@ -1,4 +1,4 @@
-package com.example.a.androidnotepadapp;
+package com.example.a.androidnotepadapp.Activity.ListAdapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -6,6 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.example.a.androidnotepadapp.DB.Entity.Note;
+import com.example.a.androidnotepadapp.R;
 
 import java.util.List;
 
@@ -24,7 +27,7 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.NoteVi
     private final LayoutInflater mInflater;
     private List<Note> mNotes;
 
-    NoteListAdapter(Context context) { mInflater = LayoutInflater.from(context); }
+    public NoteListAdapter(Context context) { mInflater = LayoutInflater.from(context); }
 
     @Override
     public NoteViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -39,7 +42,7 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.NoteVi
         holder.noteItemView.setText(text);
     }
 
-    void setNotes(List<Note> notes){
+    public void setNotes(List<Note> notes){
         mNotes = notes;
         notifyDataSetChanged();
     }

@@ -1,8 +1,12 @@
-package com.example.a.androidnotepadapp;
+package com.example.a.androidnotepadapp.ViewModel;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
+
+import com.example.a.androidnotepadapp.DB.Entity.Note;
+import com.example.a.androidnotepadapp.DB.NoteRepository;
+
 import java.util.List;
 
 public class NoteViewModel extends AndroidViewModel {
@@ -17,7 +21,7 @@ public class NoteViewModel extends AndroidViewModel {
         mAllNotes = mRepository.getAllNotes();
     }
 
-    LiveData<List<Note>> getAllNotes() { return mAllNotes; }
+    public LiveData<List<Note>> getAllNotes() { return mAllNotes; }
 
     public void insert(Note note) { mRepository.insert(note); }
 }

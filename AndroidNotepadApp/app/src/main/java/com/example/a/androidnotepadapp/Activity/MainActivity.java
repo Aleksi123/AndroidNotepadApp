@@ -1,4 +1,4 @@
-package com.example.a.androidnotepadapp;
+package com.example.a.androidnotepadapp.Activity;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -15,6 +15,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
+import com.example.a.androidnotepadapp.Activity.ListAdapter.NoteListAdapter;
+import com.example.a.androidnotepadapp.DB.Entity.Note;
+import com.example.a.androidnotepadapp.R;
+import com.example.a.androidnotepadapp.ViewModel.NoteViewModel;
+
 import java.util.List;
 
 

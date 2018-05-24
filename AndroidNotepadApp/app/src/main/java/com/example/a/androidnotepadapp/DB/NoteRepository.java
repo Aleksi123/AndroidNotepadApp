@@ -1,8 +1,12 @@
-package com.example.a.androidnotepadapp;
+package com.example.a.androidnotepadapp.DB;
 
 import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
+
+import com.example.a.androidnotepadapp.DB.Dao.NoteDao;
+import com.example.a.androidnotepadapp.DB.Entity.Note;
+
 import java.util.List;
 
 public class NoteRepository {
@@ -10,13 +14,13 @@ public class NoteRepository {
     private NoteDao mNoteDao;
     private LiveData<List<Note>> mAllNotes;
 
-    NoteRepository(Application application) {
+    public NoteRepository(Application application) {
         NoteRoomDatabase db = NoteRoomDatabase.getDatabase(application);
         mNoteDao = db.noteDao();
         mAllNotes = mNoteDao.getNotes();
     }
 
-    LiveData<List<Note>> getAllNotes() {
+    public LiveData<List<Note>> getAllNotes() {
         return mAllNotes;
     }
 

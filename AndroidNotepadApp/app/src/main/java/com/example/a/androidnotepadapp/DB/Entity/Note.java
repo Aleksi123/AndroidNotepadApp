@@ -1,4 +1,4 @@
-package com.example.a.androidnotepadapp;
+package com.example.a.androidnotepadapp.DB.Entity;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
